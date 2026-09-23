@@ -563,7 +563,7 @@ footer p {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
-    gap: 70px;
+    gap: 50px;
 }
 
 .hero-text {
@@ -625,15 +625,23 @@ footer p {
 
 .hero-image {
     width: 100%;
-    max-width: 500px;
-    height: 520px;
+    max-width: 460px;
+    height: 460px;
 
     margin-left: auto;
 
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 14px;
 }
 
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
 .hero-image img {
     width: 100%;
     height: 100%;
