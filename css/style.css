@@ -546,7 +546,133 @@ footer p {
 
 }
 
-@media (max-width: 550px) {
+@media (max-width: 550px) { /* =========================================
+   PREMIUM HERO SECTION
+   ========================================= */
+
+.hero {
+    background: #432e1a;
+    padding: 90px 8%;
+    color: #fffaf2;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.hero-label {
+    margin: 0 0 22px;
+    color: #d9ad70;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.hero-text h1 {
+    margin: 0 0 25px;
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 1.05;
+    color: #fffaf2;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 0 35px;
+
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #eadfce;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 25px;
+
+    background: #b9823f;
+    color: #ffffff;
+
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+    height: 520px;
+
+    margin-left: auto;
+
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+}
+
+
+/* =========================================
+   MOBILE HERO
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 60px 25px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        height: 400px;
+        margin: 0;
+    }
+
+}
 
     .products-grid {
         grid-template-columns: 1fr;
