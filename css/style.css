@@ -1310,8 +1310,85 @@ section.hero .hero-image img {
     #contact h2 {
         font-size: 34px;
     }
+/* =================================
+   PREMIUM FOOTER
+   ================================= */
 
+footer {
+    background: #2f2014;
+    padding: 35px 6%;
+    text-align: center;
+    color: #eadfce;
+}
+
+footer p {
+    margin: 8px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+footer p:first-child {
+    color: #fffaf2;
+    font-weight: bold;
+}
+
+footer p:last-child {
+    color: #c9b69d;
+    font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    footer {
+        padding: 30px 20px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+}
     #contact p {
         font-size: 16px;
+    }
+}
+/* =================================
+   PREMIUM FOOTER
+   ================================= */
+
+footer {
+    background: #2f2014;
+    padding: 35px 6%;
+    text-align: center;
+    color: #eadfce;
+}
+
+footer p {
+    margin: 8px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+footer p:first-child {
+    color: #fffaf2;
+    font-weight: bold;
+}
+
+footer p:last-child {
+    color: #c9b69d;
+    font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    footer {
+        padding: 30px 20px;
+    }
+
+    footer p {
+        font-size: 13px;
     }
 }
