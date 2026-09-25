@@ -935,6 +935,39 @@ section.hero .hero-image img {
     #categories article {
         min-height: auto;
     }
+} /* =================================
+   PREMIUM CATEGORY ICONS
+   ================================= */
+
+#categories .category-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid #c9a66b;
+
+    background: #ead7b9;
+    color: #432e1a;
+
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 12px rgba(67, 46, 26, 0.08);
+
+    transition: 0.3s ease;
+}
+
+#categories article:hover .category-icon {
+    transform: scale(1.08);
+    background: #b9823f;
+    color: #fffaf2;
+    border-color: #b9823f;
 }
 
     .categories-grid {
