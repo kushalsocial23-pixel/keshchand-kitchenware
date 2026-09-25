@@ -1240,3 +1240,78 @@ section.hero .hero-image img {
         font-size: 18px;
     }
 }
+/* =================================
+   VISIT OUR STORE / CONTACT
+   ================================= */
+
+#contact {
+    background: #fffaf3;
+    padding: 90px 6%;
+    text-align: center;
+}
+
+#contact h2 {
+    margin: 0 0 35px;
+    color: #432e1a;
+    font-family: Georgia, serif;
+    font-size: 44px;
+    line-height: 1.2;
+}
+
+#contact p {
+    margin: 0 auto 20px;
+    color: #6b5845;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+#contact p:first-of-type {
+    font-size: 19px;
+    color: #432e1a;
+    font-weight: bold;
+}
+
+#contact a {
+    color: #432e1a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: #b9823f;
+}
+
+#contact .whatsapp-button {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 12px 20px;
+    background: #432e1a;
+    color: #fffaf2;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+#contact .whatsapp-button:hover {
+    background: #b9823f;
+    color: #fffaf2;
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    #contact {
+        padding: 65px 25px;
+    }
+
+    #contact h2 {
+        font-size: 34px;
+    }
+
+    #contact p {
+        font-size: 16px;
+    }
+}
