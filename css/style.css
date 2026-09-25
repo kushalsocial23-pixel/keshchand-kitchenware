@@ -851,7 +851,91 @@ section.hero .hero-image img {
 
     #categories .section-title {
         font-size: 34px;
+    } /* =================================
+   KESHCHAND CATEGORIES - FINAL
+   ================================= */
+
+#categories {
+    background: #f7f1e7;
+    padding: 80px 6%;
+}
+
+#categories h2 {
+    max-width: 1200px;
+    margin: 0 auto 45px;
+    text-align: center;
+    color: #432e1a;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+/* Category cards container */
+#categories > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Individual category cards */
+#categories article {
+    background: #fffdf8;
+    border: 1px solid #ded2c2;
+    border-radius: 12px;
+    padding: 35px 28px;
+    min-height: 170px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    box-shadow: 0 5px 20px rgba(67, 46, 26, 0.06);
+}
+
+#categories article:hover {
+    transform: translateY(-6px);
+    border-color: #b9823f;
+    box-shadow: 0 12px 30px rgba(67, 46, 26, 0.13);
+}
+
+#categories article h3 {
+    margin: 0 0 15px;
+    color: #432e1a;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+#categories article p {
+    margin: 0;
+    color: #6b5845;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    #categories {
+        padding: 60px 25px;
     }
+
+    #categories h2 {
+        font-size: 34px;
+        margin-bottom: 35px;
+    }
+
+    #categories > div {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #categories article {
+        min-height: auto;
+    }
+}
 
     .categories-grid {
         grid-template-columns: 1fr;
