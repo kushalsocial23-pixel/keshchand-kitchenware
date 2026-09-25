@@ -1108,3 +1108,91 @@ section.hero .hero-image img {
         height: 280px;
     }
 }
+/* =================================
+   KESHCHAND HERITAGE
+   PREMIUM SECTION
+   ================================= */
+
+#heritage {
+    background: #432e1a;
+    padding: 100px 6%;
+    color: #fffaf2;
+    text-align: center;
+}
+
+#heritage .heritage-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#heritage .heritage-label {
+    margin: 0 0 20px;
+    color: #d9ad70;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+#heritage h2 {
+    margin: 0 0 25px;
+    color: #fffaf2;
+    font-family: Georgia, serif;
+    font-size: 52px;
+    line-height: 1.15;
+}
+
+#heritage .heritage-description {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    color: #eadfce;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+#heritage .heritage-tagline {
+    margin: 0 0 35px;
+    color: #d9ad70;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#heritage .heritage-button {
+    display: inline-block;
+    padding: 15px 28px;
+    background: #d9ad70;
+    color: #432e1a;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+#heritage .heritage-button:hover {
+    background: #fffaf2;
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    #heritage {
+        padding: 70px 25px;
+    }
+
+    #heritage h2 {
+        font-size: 40px;
+    }
+
+    #heritage .heritage-description {
+        font-size: 16px;
+    }
+
+    #heritage .heritage-tagline {
+        font-size: 18px;
+    }
+}
