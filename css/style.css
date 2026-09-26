@@ -1597,3 +1597,33 @@ footer p:last-child {
         white-space: nowrap;
     }
 }
+/* PREMIUM CATEGORY ICONS */
+
+.category-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1e3cc;
+    border: 1px solid #d9c3a2;
+    border-radius: 50%;
+
+    font-size: 30px;
+    line-height: 1;
+
+    box-shadow: 0 4px 12px rgba(67, 46, 26, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* CATEGORY CARD HOVER */
+
+#categories article:hover .category-icon {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(67, 46, 26, 0.14);
+}
