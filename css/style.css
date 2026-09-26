@@ -1556,3 +1556,44 @@ footer p:last-child {
         height: 280px;
     }
 }
+/* =================================
+   MOBILE HEADER
+   ================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 18px 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header .logo {
+        justify-content: center;
+        text-align: center;
+    }
+
+    header .logo img {
+        width: 48px;
+        height: 48px;
+    }
+
+    header .logo span {
+        font-size: 22px;
+    }
+
+    header nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+    }
+
+    header nav a {
+        font-size: 13px;
+        line-height: 1.4;
+        white-space: nowrap;
+    }
+}
