@@ -1811,3 +1811,26 @@ footer p:last-child {
         font-size: 13px;
     }
 }
+/* FORCE FLOATING WHATSAPP ON MOBILE */
+
+@media screen and (max-width: 768px) {
+
+    a.floating-whatsapp {
+        position: fixed !important;
+        display: flex !important;
+
+        right: 15px !important;
+        bottom: 15px !important;
+
+        width: 110px !important;
+        height: 44px !important;
+
+        z-index: 99999 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
