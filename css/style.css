@@ -1627,3 +1627,33 @@ footer p:last-child {
     transform: translateY(-4px);
     box-shadow: 0 8px 18px rgba(67, 46, 26, 0.14);
 }
+/* CLICKABLE CATEGORY CARDS */
+
+.category-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: #fffdf8;
+    border: 1px solid #ddd2c2;
+    border-radius: 10px;
+    padding: 35px;
+    box-sizing: border-box;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(67, 46, 26, 0.12);
+    border-color: #b9823f;
+}
+
+.category-card h3 {
+    color: #432e1a;
+}
+
+.category-card p {
+    color: #5f5145;
+}
