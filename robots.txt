@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kushalsocial23-pixel.github.io/keshchand-kitchenware/sitemap.xml
