@@ -1721,3 +1721,14 @@ footer p:last-child {
     background: #b9823f;
     transform: translateY(-2px);
 }
+/* PRODUCT AVAILABILITY */
+
+.product-status {
+    margin: 0 0 12px;
+
+    color: #7b684f;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
