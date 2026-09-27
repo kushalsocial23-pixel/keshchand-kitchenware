@@ -1888,3 +1888,47 @@ footer p:last-child {
         padding: 11px 18px;
     }
 }
+/* =================================
+   SEO CONTENT SECTION
+   ================================= */
+
+.seo-content {
+    padding: 70px 6%;
+    background: #fffaf2;
+}
+
+.seo-content .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.seo-content h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #432e1a;
+    font-family: Georgia, serif;
+    font-size: 34px;
+}
+
+.seo-content p {
+    margin-bottom: 18px;
+    color: #5a4633;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+
+    .seo-content {
+        padding: 50px 6%;
+    }
+
+    .seo-content h2 {
+        font-size: 28px;
+    }
+
+    .seo-content p {
+        font-size: 15px;
+    }
+}
