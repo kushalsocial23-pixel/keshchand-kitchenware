@@ -1970,7 +1970,7 @@ footer p:last-child {
 .reviews-slider {
     position: relative;
     width: 100%;
-    min-height: 260px;
+    min-height: 360px;
     overflow: hidden;
 }
 
@@ -2157,7 +2157,7 @@ footer p:last-child {
     }
 
     .reviews-slider {
-        min-height: 360px;
+        min-height: 430px;
     }
 
     .review-card {
