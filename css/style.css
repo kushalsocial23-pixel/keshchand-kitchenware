@@ -2181,3 +2181,88 @@ footer p:last-child {
         margin-top: 25px;
     }
 }
+/* =================================
+   GIVE US A REVIEW
+   ================================= */
+
+.give-review {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(185, 130, 63, 0.35);
+}
+
+.give-review-title {
+    margin-bottom: 8px;
+
+    color: #fffaf2;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.give-review-text {
+    margin-bottom: 20px;
+
+    color: #dfd1bf;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.give-review-button {
+    display: inline-block;
+
+    padding: 13px 26px;
+
+    background: #b9823f;
+
+    color: #fffaf2 !important;
+
+    border: 1px solid #d8a15d;
+    border-radius: 6px;
+
+    text-decoration: none !important;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.give-review-button:hover {
+    background: #d8a15d;
+
+    color: #432e1a !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .give-review {
+        margin-top: 30px;
+        padding-top: 25px;
+    }
+
+    .give-review-title {
+        font-size: 19px;
+    }
+
+    .give-review-text {
+        font-size: 14px;
+    }
+
+    .give-review-button {
+        padding: 12px 22px;
+    }
+
+}
