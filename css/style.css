@@ -1932,3 +1932,233 @@ footer p:last-child {
         font-size: 15px;
     }
 }
+/* =================================
+   CUSTOMER REVIEWS
+   ================================= */
+
+.customer-reviews {
+    padding: 80px 6%;
+    background: #432e1a;
+    color: #fffaf2;
+    text-align: center;
+}
+
+.reviews-container {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.reviews-label {
+    margin-bottom: 10px;
+    color: #d8a15d;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.customer-reviews h2 {
+    margin-bottom: 40px;
+    color: #fffaf2;
+    font-family: Georgia, serif;
+    font-size: 38px;
+}
+
+
+/* REVIEW SLIDER */
+
+.reviews-slider {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    overflow: hidden;
+}
+
+
+/* REVIEW CARD */
+
+.review-card {
+    display: none;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 45px 55px;
+
+    background: #fffaf2;
+    color: #432e1a;
+
+    border: 1px solid #b9823f;
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.review-card.active {
+    display: block;
+}
+
+
+/* STARS */
+
+.review-stars {
+    margin-bottom: 22px;
+
+    color: #b9823f;
+
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+
+
+/* REVIEW TEXT */
+
+.review-text {
+    max-width: 800px;
+
+    margin: 0 auto 25px;
+
+    color: #5a4633;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* CUSTOMER NAME */
+
+.review-name {
+    margin-bottom: 7px;
+
+    color: #432e1a;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* GOOGLE REVIEW LABEL */
+
+.review-source {
+    color: #8a735c;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+}
+
+
+/* DOTS */
+
+.review-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 25px;
+}
+
+.review-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #9c7956;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.review-dot.active {
+    width: 11px;
+    height: 11px;
+
+    background: #d8a15d;
+}
+
+
+/* GOOGLE BUTTON */
+
+.google-reviews-button {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 12px 24px;
+
+    background: transparent;
+
+    color: #fffaf2 !important;
+
+    border: 1px solid #b9823f;
+    border-radius: 6px;
+
+    text-decoration: none !important;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.google-reviews-button:hover {
+    background: #b9823f;
+
+    color: #fffaf2 !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .customer-reviews {
+        padding: 60px 6%;
+    }
+
+    .customer-reviews h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .reviews-slider {
+        min-height: 360px;
+    }
+
+    .review-card {
+        padding: 35px 25px;
+    }
+
+    .review-stars {
+        font-size: 20px;
+    }
+
+    .review-text {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .review-name {
+        font-size: 17px;
+    }
+
+    .google-reviews-button {
+        margin-top: 25px;
+    }
+}
