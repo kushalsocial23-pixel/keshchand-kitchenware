@@ -2548,3 +2548,176 @@ footer p:last-child {
     }
 
 }
+/* =================================
+   HOW IT WORKS
+   ================================= */
+
+.services-process {
+    margin-top: 65px;
+    padding-top: 50px;
+
+    border-top: 1px solid #d5b486;
+}
+
+.process-label {
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    color: #b9823f;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.services-process > h3 {
+    margin-bottom: 35px;
+
+    text-align: center;
+
+    color: #432e1a;
+
+    font-family: Georgia, serif;
+    font-size: 30px;
+}
+
+
+/* =================================
+   PROCESS GRID
+   ================================= */
+
+.process-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =================================
+   PROCESS CARD
+   ================================= */
+
+.process-card {
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #ead9bf;
+    border-radius: 10px;
+
+    box-shadow: 0 8px 25px rgba(67, 46, 26, 0.07);
+}
+
+.process-title {
+    margin-bottom: 22px;
+
+    color: #432e1a;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+/* =================================
+   PROCESS STEPS
+   ================================= */
+
+.process-steps {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.process-steps span {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-height: 80px;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    background: #fffaf2;
+
+    border: 1px solid #ead9bf;
+    border-radius: 7px;
+
+    color: #5a4633;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+.process-steps b {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #b9823f;
+
+    font-size: 12px;
+}
+
+
+/* =================================
+   PROCESS MOBILE
+   ================================= */
+
+@media (max-width: 768px) {
+
+    .services-process {
+        margin-top: 50px;
+        padding-top: 40px;
+    }
+
+    .services-process > h3 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .process-card {
+        padding: 20px;
+    }
+
+    .process-title {
+        font-size: 18px;
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .process-steps span {
+        min-height: 75px;
+
+        font-size: 11px;
+    }
+
+}
