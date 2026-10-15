@@ -2721,3 +2721,206 @@ footer p:last-child {
     }
 
 }
+
+/* =========================================
+   KESHCHAND KITCHENWARE — GIFTING SECTION
+   ========================================= */
+
+.gifting-section {
+    padding: 90px 24px;
+    background: #f8f4ed;
+    color: #30251c;
+}
+
+.gifting-container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.gifting-heading {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.gifting-eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #987344;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.gifting-heading h2 {
+    margin: 0 0 18px;
+    color: #39291d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.gifting-heading > p {
+    margin: 0;
+    color: #75695e;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.gifting-categories {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.gifting-category {
+    min-height: 185px;
+    padding: 27px 22px;
+    background: #fffdf9;
+    border: 1px solid #e9dfd0;
+    border-radius: 10px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.gifting-category:hover {
+    transform: translateY(-5px);
+    border-color: #b99a6b;
+    box-shadow: 0 14px 30px rgba(71, 48, 25, 0.09);
+}
+
+.gifting-category-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 18px;
+    border: 1px solid #c8ae83;
+    border-radius: 50%;
+    color: #987344;
+    font-size: 16px;
+}
+
+.gifting-category h3 {
+    margin: 0 0 10px;
+    color: #39291d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.gifting-category p {
+    margin: 0;
+    color: #796e62;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.gifting-enquiry {
+    margin-top: 42px;
+    padding: 38px 24px;
+    border: 1px solid #dfcdb1;
+    border-radius: 12px;
+    background: #efe5d5;
+    text-align: center;
+}
+
+.gifting-enquiry h3 {
+    margin: 0 0 12px;
+    color: #39291d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(23px, 3vw, 30px);
+    font-weight: 500;
+}
+
+.gifting-enquiry p {
+    max-width: 620px;
+    margin: 0 auto 24px;
+    color: #75695e;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.gifting-whatsapp-btn {
+    display: inline-block;
+    padding: 14px 23px;
+    border: 1px solid #684b2f;
+    border-radius: 5px;
+    background: #684b2f;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.gifting-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    background: #4a3422;
+    border-color: #4a3422;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .gifting-section {
+        padding: 70px 22px;
+    }
+
+    .gifting-categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+    .gifting-section {
+        padding: 55px 17px;
+    }
+
+    .gifting-heading {
+        margin-bottom: 32px;
+    }
+
+    .gifting-heading h2 {
+        font-size: 31px;
+    }
+
+    .gifting-heading > p {
+        font-size: 14px;
+    }
+
+    .gifting-categories {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .gifting-category {
+        min-height: auto;
+        padding: 23px;
+    }
+
+    .gifting-category-icon {
+        margin-bottom: 12px;
+    }
+
+    .gifting-enquiry {
+        margin-top: 28px;
+        padding: 30px 19px;
+    }
+
+    .gifting-whatsapp-btn {
+        max-width: 100%;
+        padding: 13px 16px;
+    }
+}
