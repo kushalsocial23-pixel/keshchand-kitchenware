@@ -2924,3 +2924,99 @@ footer p:last-child {
         padding: 13px 16px;
     }
 }
+
+/* ================= GIFTING PRODUCT CARDS ================= */
+
+.gifting-products {
+    margin: 45px 0;
+}
+
+.gifting-product-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+    background: #fffdf8;
+    border: 1px solid #e8dcc8;
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(75, 48, 25, 0.08);
+}
+
+.gifting-product-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f7f0e6;
+}
+
+.gifting-product-image img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: contain;
+    padding: 12px;
+}
+
+.gifting-product-info {
+    text-align: left;
+}
+
+.gifting-product-label {
+    margin-bottom: 10px;
+    color: #9a713c;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gifting-product-info h3 {
+    margin: 0 0 14px;
+    color: #4b3020;
+    font-size: 30px;
+}
+
+.gifting-product-info > p:not(.gifting-product-label) {
+    color: #6d6257;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.gifting-product-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 20px;
+    background: #6b4228;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.gifting-product-button:hover {
+    background: #946b3c;
+}
+
+/* Mobile layout */
+
+@media (max-width: 700px) {
+    .gifting-product-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px;
+    }
+
+    .gifting-product-image img {
+        height: 300px;
+    }
+
+    .gifting-product-info h3 {
+        font-size: 25px;
+    }
+}
+
+/* ================= END GIFTING PRODUCT CARDS ================= */
