@@ -3020,3 +3020,53 @@ footer p:last-child {
 }
 
 /* ================= END GIFTING PRODUCT CARDS ================= */
+
+/* ================= OM DIYA IMAGE GALLERY ================= */
+
+.gifting-product-gallery {
+    min-width: 0;
+}
+
+.gifting-product-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.om-diya-thumb {
+    padding: 4px;
+    border: 1px solid #e8dcc8;
+    border-radius: 8px;
+    background: #fffdf8;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.om-diya-thumb img {
+    display: block;
+    width: 100%;
+    height: 75px;
+    object-fit: contain;
+}
+
+.om-diya-thumb.active {
+    border: 2px solid #9a713c;
+}
+
+.om-diya-thumb:focus-visible {
+    outline: 2px solid #6b4228;
+    outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+    .gifting-product-thumbnails {
+        gap: 8px;
+    }
+
+    .om-diya-thumb img {
+        height: 65px;
+    }
+}
+
+/* ================= END OM DIYA IMAGE GALLERY ================= */
