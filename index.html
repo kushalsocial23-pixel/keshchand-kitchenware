@@ -984,17 +984,42 @@
         </div>
 
         
-<div class="gifting-products">
 
-    <article class="gifting-product-card">
+<div class="gifting-product-gallery">
 
-        <div class="gifting-product-image">
-            <img
-                src="image/gifting/om-diya-main.png"
-                alt="Om Diya in a red presentation gift box"
-                loading="lazy"
-            >
-        </div>
+    <div class="gifting-product-image">
+        <img
+            id="omDiyaMainImage"
+            src="image/gifting/om-diya-main.png"
+            alt="Om Diya in a red presentation gift box"
+        >
+    </div>
+
+    <div class="gifting-product-thumbnails">
+
+        <button type="button" class="om-diya-thumb active"
+            onclick="changeOmDiyaImage(this, 'image/gifting/om-diya-main.png', 'Om Diya in a red presentation gift box')">
+            <img src="image/gifting/om-diya-main.png" alt="Om Diya gift box">
+        </button>
+
+        <button type="button" class="om-diya-thumb"
+            onclick="changeOmDiyaImage(this, 'image/gifting/om-diya-lifestyle.png', 'Om Diya displayed in a puja setting')">
+            <img src="image/gifting/om-diya-lifestyle.png" alt="Om Diya lifestyle view">
+        </button>
+
+        <button type="button" class="om-diya-thumb"
+            onclick="changeOmDiyaImage(this, 'image/gifting/om-diya-detail.png', 'Close-up view of the Om Diya')">
+            <img src="image/gifting/om-diya-detail.png" alt="Om Diya detail view">
+        </button>
+
+        <button type="button" class="om-diya-thumb"
+            onclick="changeOmDiyaImage(this, 'image/gifting/om-diya-features.png', 'Additional view of the Om Diya')">
+            <img src="image/gifting/om-diya-features.png" alt="Om Diya additional view">
+        </button>
+
+    </div>
+</div>
+
 
         <div class="gifting-product-info">
 
