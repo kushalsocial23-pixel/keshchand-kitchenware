@@ -1215,6 +1215,23 @@
 </a>
 <script src="js/script.js"></script>
 
+<script>
+function changeOmDiyaImage(button, imagePath, imageAlt) {
+    const mainImage = document.getElementById("omDiyaMainImage");
+
+    if (!mainImage) return;
+
+    mainImage.src = imagePath;
+    mainImage.alt = imageAlt;
+
+    document.querySelectorAll(".om-diya-thumb").forEach(function (thumb) {
+        thumb.classList.remove("active");
+    });
+
+    button.classList.add("active");
+}
+</script>
+
 </body>
 
 </html>
