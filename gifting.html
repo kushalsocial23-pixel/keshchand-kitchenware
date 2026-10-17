@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gifting Collection | KeshChand Kitchenware</title>
+
+    <meta name="description"
+        content="Explore thoughtful gifting options for puja, weddings, housewarming, corporate occasions and kitchen gifts at KeshChand Kitchenware.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .gift-page {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px 60px;
+        }
+
+        .gift-page-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .gift-page-heading .eyebrow {
+            color: #9a713c;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .gift-page-heading h1 {
+            color: #4b3020;
+            margin: 12px 0;
+            font-size: clamp(28px, 4vw, 42px);
+        }
+
+        .gift-page-heading p {
+            color: #6d6257;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .gift-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px 0 40px;
+        }
+
+        .gift-filter {
+            padding: 11px 17px;
+            border: 1px solid #d8c4a7;
+            border-radius: 25px;
+            background: #fffdf8;
+            color: #5b3b27;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .gift-filter.active,
+        .gift-filter:hover {
+            background: #6b4228;
+            border-color: #6b4228;
+            color: white;
+        }
+
+        .gift-products-heading {
+            color: #4b3020;
+            margin-bottom: 22px;
+        }
+
+        .gift-products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .gift-empty-message {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #6d6257;
+            padding: 35px 15px;
+            border: 1px dashed #d8c4a7;
+            border-radius: 12px;
+        }
+
+        .gift-back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #6b4228;
+            text-decoration: none;
+        }
+
+        @media (max-width: 800px) {
+            .gift-products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 520px) {
+            .gift-page {
+                padding: 28px 15px 45px;
+            }
+
+            .gift-products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gift-filter {
+                font-size: 13px;
+                padding: 10px 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- GIFTING COLLECTION -->
+
+    <main class="gift-page">
+
+        <a href="index.html#categories" class="gift-back-link">
+            ← Back to Shop by Category
+        </a>
+
+        <header class="gift-page-heading">
+
+            <span class="eyebrow">THE ART OF GIFTING</span>
+
+            <h1>Thoughtful Gifts. Timeless Memories.</h1>
+
+            <p>
+                Discover meaningful gifts for special occasions,
+                traditional celebrations, new homes and everyday
+                kitchen moments.
+            </p>
+
+        </header>
+
+        <!-- CATEGORY FILTERS -->
+
+        <nav class="gift-filters" aria-label="Filter gifting products">
+
+            <button type="button"
+                class="gift-filter active"
+                data-category="all"
+                aria-pressed="true">
+                All Gifts
+            </button>
+
+            <button type="button"
+                class="gift-filter"
+                data-category="puja"
+                aria-pressed="false">
+                Puja & Traditional Gifts
+            </button>
+
+            <button type="button"
+                class="gift-filter"
+                data-category="wedding"
+                aria-pressed="false">
+                Wedding Gifts
+            </button>
+
+            <button type="button"
+                class="gift-filter"
+                data-category="housewarming"
+                aria-pressed="false">
+                Housewarming & Corporate Gifting
+            </button>
+
+            <button type="button"
+                class="gift-filter"
+                data-category="kitchen"
+                aria-pressed="false">
+                Cookware & Kitchen Gifts
+            </button>
+
+        </nav>
+
+        <!-- PRODUCT LIST -->
+
+        <section aria-labelledby="gift-products-title">
+
+            <h2 id="gift-products-title" class="gift-products-heading">
+                Explore Our Gifts
+            </h2>
+
+            
+            <div id="giftProductsGrid" class="gift-products-grid"></div>
+
+            <script>
+                const giftProducts = [
+                    {
+                        id: "om-diya",
+                        name: "Om Diya",
+                        category: "puja",
+                        categoryLabel: "Puja & Traditional Gifts",
+                        price: null,
+                        image: "image/gifting/om-diya-main.png",
+                        description:
+                            "An Om-shaped German silver diya presented in a red gift box."
+                    }
+                ];
+
+                const giftGrid =
+                    document.getElementById("giftProductsGrid");
+
+                const giftFilters =
+                    document.querySelectorAll(".gift-filter");
+
+                function renderGiftProducts(category = "all") {
+                    const filteredProducts =
+                        category === "all"
+                            ? giftProducts
+                            : giftProducts.filter(
+                                product => product.category === category
+                            );
+
+                    if (filteredProducts.length === 0) {
+                        giftGrid.innerHTML = `
+                            <p class="gift-empty-message">
+                                Products in this category will be added soon.
+                                Please check back later.
+                            </p>
+                        `;
+                        return;
+                    }
+
+                    giftGrid.innerHTML = filteredProducts.map(product => `
+                        <article class="gift-product-card">
+                            <a
+                                class="gift-product-link"
+                                href="product.html?id=${encodeURIComponent(product.id)}"
+                            >
+                                <img
+                                    src="${product.image}"
+                                    alt="${product.name}"
+                                    loading="lazy"
+                                >
+
+                                <div class="gift-product-info">
+                                    <p class="gift-product-category">
+                                        ${product.categoryLabel}
+                                    </p>
+
+                                    <h3>${product.name}</h3>
+
+                                    <p class="gift-product-price">
+                                        ${product.price === null
+                                            ? "Price to be added"
+                                            : "₹" + product.price}
+                                    </p>
+
+                                    <span class="gift-view-product">
+                                        View Product →
+                                    </span>
+                                </div>
+                            </a>
+                        </article>
+                    `).join("");
+                }
+
+                giftFilters.forEach(button => {
+                    button.addEventListener("click", () => {
+                        giftFilters.forEach(filter => {
+                            filter.classList.remove("active");
+                            filter.setAttribute("aria-pressed", "false");
+                        });
+
+                        button.classList.add("active");
+                        button.setAttribute("aria-pressed", "true");
+
+                        renderGiftProducts(button.dataset.category);
+                    });
+                });
+
+                renderGiftProducts();
+            </script>
+
+
+        </section>
+
+    </main>
+
+</body>
+</html>
