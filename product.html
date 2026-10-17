@@ -512,22 +512,95 @@ const products = [
                 </div>
             `;
 
-            productContent
-                .querySelectorAll(".product-thumbnail")
-                .forEach(button => {
-                    button.addEventListener("click", () => {
-                        document.getElementById("productMainImage").src =
-                            button.dataset.image;
+            
+let currentImageIndex = 0;
+let galleryTimer;
 
-                        productContent
-                            .querySelectorAll(".product-thumbnail")
-                            .forEach(thumbnail => {
-                                thumbnail.classList.remove("active");
-                            });
+const mainImage = document.getElementById("productMainImage");
+const thumbnails = [
+    ...productContent.querySelectorAll(".product-thumbnail")
+];
 
-                        button.classList.add("active");
-                    });
-                });
+function changeGalleryImage(index) {
+    currentImageIndex = (index + gallery.length) % gallery.length;
+
+    mainImage.src = gallery[currentImageIndex];
+    mainImage.alt = item.name + " - Image " + (currentImageIndex + 1);
+
+    thumbnails.forEach((thumbnail, i) => {
+        thumbnail.classList.toggle("active", i === currentImageIndex);
+    });
+}
+
+function startGallerySlideshow() {
+    clearInterval(galleryTimer);
+
+    if (gallery.length > 1) {
+        galleryTimer = setInterval(() => {
+            changeGalleryImage(currentImageIndex + 1);
+        }, 3000);
+    }
+}
+
+thumbnails.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        changeGalleryImage(index);
+        startGallerySlideshow();
+    });
+});
+
+document.getElementById("galleryPrev").addEventListener("click", () => {
+    changeGalleryImage(currentImageIndex - 1);
+    startGallerySlideshow();
+});
+
+document.getElementById("galleryNext").addEventListener("click", () => {
+    changeGalleryImage(currentImageIndex + 1);
+    startGallerySlideshow();
+});
+
+// Create the enlarged image viewer.
+if (!document.getElementById("productImageLightbox")) {
+    document.body.insertAdjacentHTML("beforeend", `
+        <div id="productImageLightbox"
+             class="product-image-lightbox"
+             role="dialog"
+             aria-modal="true"
+             aria-label="Enlarged product image">
+            <button type="button"
+                    class="lightbox-close"
+                    aria-label="Close enlarged image">&times;</button>
+            <img src="" alt="">
+        </div>
+    `);
+}
+
+const lightbox = document.getElementById("productImageLightbox");
+const lightboxImage = lightbox.querySelector("img");
+
+document.getElementById("productImageView").addEventListener("click", () => {
+    lightboxImage.src = mainImage.src;
+    lightboxImage.alt = mainImage.alt;
+    lightbox.classList.add("open");
+});
+
+lightbox.querySelector(".lightbox-close").addEventListener("click", () => {
+    lightbox.classList.remove("open");
+});
+
+lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) {
+        lightbox.classList.remove("open");
+    }
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        lightbox.classList.remove("open");
+    }
+});
+
+startGallerySlideshow();
         }
 
         function showSimilarProducts(currentProduct) {
