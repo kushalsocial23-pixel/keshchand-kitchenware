@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details | KeshChand Kitchenware</title>
+
+    <meta name="description"
+        content="Explore gifting products from KeshChand Kitchenware.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .product-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 35px 20px 60px;
+        }
+
+        .product-back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #6b4228;
+            text-decoration: none;
+        }
+
+        .product-detail-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .product-main-image {
+            background: #f7f0e6;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .product-main-image img {
+            display: block;
+            width: 100%;
+            height: 430px;
+            object-fit: contain;
+            padding: 15px;
+        }
+
+        .product-gallery-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .product-thumbnail {
+            padding: 4px;
+            border: 1px solid #e8dcc8;
+            border-radius: 8px;
+            background: #fffdf8;
+            cursor: pointer;
+        }
+
+        .product-thumbnail.active {
+            border: 2px solid #9a713c;
+        }
+
+        .product-thumbnail img {
+            display: block;
+            width: 100%;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .product-category-label {
+            color: #9a713c;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .product-information h1 {
+            color: #4b3020;
+            font-size: clamp(28px, 4vw, 38px);
+            margin: 10px 0;
+        }
+
+        .product-detail-price {
+            color: #6b4228;
+            font-size: 23px;
+            font-weight: 700;
+            margin: 18px 0;
+        }
+
+        .product-description {
+            color: #6d6257;
+            line-height: 1.9;
+        }
+
+        .product-specifications {
+            margin: 25px 0;
+            border-top: 1px solid #e8dcc8;
+        }
+
+        .product-specification {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e8dcc8;
+            color: #5b4636;
+        }
+
+        .product-specification strong {
+            text-align: right;
+        }
+
+        .product-whatsapp-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 14px 22px;
+            background: #6b4228;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .product-whatsapp-button:hover {
+            background: #946b3c;
+        }
+
+        .similar-products-section {
+            margin-top: 65px;
+        }
+
+        .similar-products-section h2 {
+            color: #4b3020;
+            margin-bottom: 25px;
+        }
+
+        .similar-products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .similar-product-card {
+            border: 1px solid #e8dcc8;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fffdf8;
+        }
+
+        .similar-product-card a {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .similar-product-card img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            padding: 10px;
+            background: #f7f0e6;
+        }
+
+        .similar-product-info {
+            padding: 15px;
+        }
+
+        .similar-product-info h3 {
+            color: #4b3020;
+            margin: 0 0 8px;
+        }
+
+        .similar-product-info p {
+            color: #6b4228;
+            font-weight: 600;
+        }
+
+        .product-error {
+            padding: 40px 15px;
+            text-align: center;
+            color: #6d6257;
+        }
+
+        @media (max-width: 750px) {
+            .product-detail-layout {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .product-main-image img {
+                height: 340px;
+            }
+
+            .similar-products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+            }
+
+            .similar-product-card img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .similar-products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="product-page">
+
+        <a href="gifting.html" class="product-back-link">
+            ← Back to Gifting Collection
+        </a>
+
+        <div id="productContent">
+            <p class="product-error">Loading product details...</p>
+        </div>
+
+        <section class="similar-products-section"
+            aria-labelledby="similarProductsHeading">
+
+            <h2 id="similarProductsHeading">View Similar Products</h2>
+
+            <div id="similarProductsGrid" class="similar-products-grid"></div>
+
+        </section>
+
+    </main>
+
+    <script>
+        const products = [
+            {
+                id: "om-diya",
+                name: "Om Diya",
+                category: "puja",
+                categoryLabel: "Puja & Traditional Gifts",
+                price: null,
+                material: "German Silver",
+                image: "image/gifting/om-diya-main.png",
+                gallery: [
+                    "image/gifting/om-diya-main.png",
+                    "image/gifting/om-diya-lifestyle.png",
+                    "image/gifting/om-diya-detail.png",
+                    "image/gifting/om-diya-features.png"
+                ],
+                description:
+                    "An Om-shaped German silver diya presented in a red gift box. Its central bowl is designed to hold oil and a wick for lighting.",
+                details: {
+                    "Material": "German Silver",
+                    "Presentation": "Red gift box",
+                    "Use": "For lighting during puja and traditional occasions"
+                }
+            }
+        ];
+
+        const productId =
+            new URLSearchParams(window.location.search).get("id");
+
+        const product =
+            products.find(item => item.id === productId);
+
+        const productContent =
+            document.getElementById("productContent");
+
+        const similarProductsGrid =
+            document.getElementById("similarProductsGrid");
+
+        function escapeHTML(value) {
+            return String(value).replace(/[&<>"']/g, character => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+            })[character]);
+        }
+
+        function createWhatsAppLink(item) {
+            const message = encodeURIComponent(
+                "Hello KeshChand Kitchenware, I am interested in " +
+                item.name + ". Please share the price and availability."
+            );
+
+            return "https://wa.me/919125330663?text=" + message;
+        }
+
+        function showProduct(item) {
+            document.title =
+                item.name + " | KeshChand Kitchenware";
+
+            const gallery = item.gallery || [item.image];
+
+            const specifications = Object.entries(item.details || {})
+                .map(([label, value]) => `
+                    <div class="product-specification">
+                        <span>${escapeHTML(label)}</span>
+                        <strong>${escapeHTML(value)}</strong>
+                    </div>
+                `).join("");
+
+            productContent.innerHTML = `
+                <div class="product-detail-layout">
+
+                    <div class="product-gallery">
+
+                        <div class="product-main-image">
+                            <img
+                                id="productMainImage"
+                                src="${escapeHTML(gallery[0])}"
+                                alt="${escapeHTML(item.name)}"
+                            >
+                        </div>
+
+                        <div class="product-gallery-thumbnails">
+                            ${gallery.map((image, index) => `
+                                <button
+                                    type="button"
+                                    class="product-thumbnail ${index === 0 ? "active" : ""}"
+                                    data-image="${escapeHTML(image)}"
+                                    aria-label="View product image ${index + 1}"
+                                >
+                                    <img
+                                        src="${escapeHTML(image)}"
+                                        alt=""
+                                    >
+                                </button>
+                            `).join("")}
+                        </div>
+
+                    </div>
+
+                    <div class="product-information">
+
+                        <p class="product-category-label">
+                            ${escapeHTML(item.categoryLabel)}
+                        </p>
+
+                        <h1>${escapeHTML(item.name)}</h1>
+
+                        <p class="product-detail-price">
+                            ${item.price === null
+                                ? "Price to be added"
+                                : "₹" + escapeHTML(item.price)}
+                        </p>
+
+                        <p class="product-description">
+                            ${escapeHTML(item.description)}
+                        </p>
+
+                        <div class="product-specifications">
+                            ${specifications}
+                        </div>
+
+                        <a
+                            class="product-whatsapp-button"
+                            href="${createWhatsAppLink(item)}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Enquire on WhatsApp →
+                        </a>
+
+                    </div>
+
+                </div>
+            `;
+
+            productContent
+                .querySelectorAll(".product-thumbnail")
+                .forEach(button => {
+                    button.addEventListener("click", () => {
+                        document.getElementById("productMainImage").src =
+                            button.dataset.image;
+
+                        productContent
+                            .querySelectorAll(".product-thumbnail")
+                            .forEach(thumbnail => {
+                                thumbnail.classList.remove("active");
+                            });
+
+                        button.classList.add("active");
+                    });
+                });
+        }
+
+        function showSimilarProducts(currentProduct) {
+            const similar = products.filter(
+                item => item.id !== currentProduct.id
+            );
+
+            if (similar.length === 0) {
+                similarProductsGrid.innerHTML = `
+                    <p class="product-error">
+                        More gifting products will appear here soon.
+                    </p>
+                `;
+                return;
+            }
+
+            similarProductsGrid.innerHTML = similar.map(item => `
+                <article class="similar-product-card">
+                    <a href="product.html?id=${encodeURIComponent(item.id)}">
+                        <img
+                            src="${escapeHTML(item.image)}"
+                            alt="${escapeHTML(item.name)}"
+                            loading="lazy"
+                        >
+                        <div class="similar-product-info">
+                            <h3>${escapeHTML(item.name)}</h3>
+                            <p>
+                                ${item.price === null
+                                    ? "Price to be added"
+                                    : "₹" + escapeHTML(item.price)}
+                            </p>
+                            <span>View Product →</span>
+                        </div>
+                    </a>
+                </article>
+            `).join("");
+        }
+
+        if (product) {
+            showProduct(product);
+            showSimilarProducts(product);
+        } else {
+            productContent.innerHTML = `
+                <div class="product-error">
+                    <h1>Product not found</h1>
+                    <p>Please return to the gifting collection.</p>
+                    <a href="gifting.html">Browse Gifting Products</a>
+                </div>
+            `;
+
+            document.querySelector(".similar-products-section").hidden = true;
+        }
+    </script>
+
+</body>
+</html>
