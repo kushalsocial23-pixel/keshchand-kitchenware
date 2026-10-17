@@ -560,6 +560,7 @@ document.getElementById("galleryNext").addEventListener("click", () => {
 });
 
 // Create the enlarged image viewer.
+
 if (!document.getElementById("productImageLightbox")) {
     document.body.insertAdjacentHTML("beforeend", `
         <div id="productImageLightbox"
@@ -567,13 +568,24 @@ if (!document.getElementById("productImageLightbox")) {
              role="dialog"
              aria-modal="true"
              aria-label="Enlarged product image">
+
             <button type="button"
                     class="lightbox-close"
                     aria-label="Close enlarged image">&times;</button>
+
+            <button type="button"
+                    class="lightbox-arrow lightbox-prev"
+                    aria-label="Previous image">‹</button>
+
             <img src="" alt="">
+
+            <button type="button"
+                    class="lightbox-arrow lightbox-next"
+                    aria-label="Next image">›</button>
         </div>
     `);
 }
+
 
 const lightbox = document.getElementById("productImageLightbox");
 const lightboxImage = lightbox.querySelector("img");
