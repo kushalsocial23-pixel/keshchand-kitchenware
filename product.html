@@ -214,6 +214,100 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+.product-main-image {
+    position: relative;
+}
+
+.product-image-view {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: zoom-in;
+    position: relative;
+}
+
+.product-image-view img {
+    display: block;
+    width: 100%;
+}
+
+.image-zoom-hint {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: rgba(50, 35, 25, 0.8);
+    color: white;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 253, 248, 0.92);
+    color: #4b3020;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-arrow:hover {
+    background: #6b4228;
+    color: white;
+}
+
+.gallery-prev {
+    left: 12px;
+}
+
+.gallery-next {
+    right: 12px;
+}
+
+.product-image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(25, 18, 12, 0.92);
+}
+
+.product-image-lightbox.open {
+    display: flex;
+}
+
+.product-image-lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 38px;
+    cursor: pointer;
+}
+
     </style>
 </head>
 
@@ -342,13 +436,27 @@ const products = [
 
                     <div class="product-gallery">
 
-                        <div class="product-main-image">
-                            <img
-                                id="productMainImage"
-                                src="${escapeHTML(gallery[0])}"
-                                alt="${escapeHTML(item.name)}"
-                            >
-                        </div>
+                        
+<div class="product-main-image">
+    <button
+        type="button"
+        id="productImageView"
+        class="product-image-view"
+        aria-label="Enlarge product image"
+    >
+        <img
+            id="productMainImage"
+            src="${escapeHTML(gallery[0])}"
+            alt="${escapeHTML(item.name)}"
+        >
+        <span class="image-zoom-hint">Click to enlarge ⤢</span>
+    </button>
+
+    <button type="button" id="galleryPrev" class="gallery-arrow gallery-prev"
+        aria-label="Previous image">‹</button>
+    <button type="button" id="galleryNext" class="gallery-arrow gallery-next"
+        aria-label="Next image">›</button>
+</div>
 
                         <div class="product-gallery-thumbnails">
                             ${gallery.map((image, index) => `
