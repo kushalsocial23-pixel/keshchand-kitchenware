@@ -858,6 +858,7 @@ section.hero .hero-image img {
 #categories {
     background: #f7f1e7;
     padding: 80px 6%;
+ 
 }
 
 #categories h2 {
@@ -928,7 +929,7 @@ section.hero .hero-image img {
     }
 
     #categories > div {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
     }
 
