@@ -934,9 +934,16 @@ section.hero .hero-image img {
     }
 
     #categories article {
-        min-height: auto;
-    }
-} /* =================================
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    padding: 16px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+ /* =================================
    PREMIUM CATEGORY ICONS
    ================================= */
 
