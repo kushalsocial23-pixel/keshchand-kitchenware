@@ -459,6 +459,24 @@
     }
 }
 
+.gift-share-button {
+    display: inline-block;
+    margin: 8px 0 0 8px;
+    padding: 7px 12px;
+    border: 1px solid #c6a15c;
+    border-radius: 20px;
+    background: #fffaf0;
+    color: #6b4228;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.gift-share-button:hover {
+    background: #6b4228;
+    color: #ffffff;
+}
+
     </style>
 </head>
 
@@ -613,9 +631,20 @@ const giftProducts = [
                                             : "₹" + product.price}
                                     </p>
 
-                                    <span class="gift-view-product">
-                                        View Product →
-                                    </span>
+                                    
+<span class="gift-view-product">
+    View Product →
+</span>
+
+<button
+    type="button"
+    class="gift-share-button"
+    data-product-id="${product.id}"
+    onclick="event.preventDefault(); event.stopPropagation(); shareGiftProduct('${product.id}')"
+>
+    ↗ Share Product
+</button>
+
                                 </div>
                             </a>
                         </article>
@@ -635,6 +664,38 @@ const giftProducts = [
                         renderGiftProducts(button.dataset.category);
                     });
                 });
+
+async function shareGiftProduct(productId) {
+    const product = giftProducts.find(item => item.id === productId);
+
+    if (!product) return;
+
+    const productUrl = new URL(
+        `product.html?id=${encodeURIComponent(product.id)}`,
+        window.location.href
+    ).href;
+
+    const shareData = {
+        title: product.name + " | KeshChand Kitchenware",
+        text: `Check out ${product.name} at KeshChand Kitchenware.`,
+        url: productUrl
+    };
+
+    try {
+        if (navigator.share) {
+            await navigator.share(shareData);
+        } else if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(productUrl);
+            alert("Product link copied! You can now share it.");
+        } else {
+            prompt("Copy this product link to share:", productUrl);
+        }
+    } catch (error) {
+        if (error.name !== "AbortError") {
+            alert("Unable to share right now. Please try again.");
+        }
+    }
+}
 
                 renderGiftProducts();
             </script>
