@@ -452,34 +452,6 @@ const products = [
         const productId =
             new URLSearchParams(window.location.search).get("id");
 
-const shareProductBtn = document.getElementById("shareProductBtn");
-
-shareProductBtn.addEventListener("click", async () => {
-    const productUrl = window.location.href;
-    const productName = document.querySelector("h1")?.textContent.trim()
-        || "Product";
-
-    const shareData = {
-        title: `${productName} | KeshChand Kitchenware`,
-        text: `Check out ${productName} at KeshChand Kitchenware.`,
-        url: productUrl
-    };
-
-    try {
-        if (navigator.share) {
-            await navigator.share(shareData);
-        } else if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(productUrl);
-            alert("Product link copied! You can now share it.");
-        } else {
-            prompt("Copy this product link to share:", productUrl);
-        }
-    } catch (error) {
-        if (error.name !== "AbortError") {
-            alert("Unable to share right now. Please try again.");
-        }
-    }
-});
 
         const product =
             products.find(item => item.id === productId);
