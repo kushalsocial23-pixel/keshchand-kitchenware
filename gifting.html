@@ -358,6 +358,34 @@
     }
 }
 
+/* Organised gifting filters on mobile */
+@media (max-width: 520px) {
+    .gift-page .gift-filters {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+        margin: 25px auto 35px;
+        align-items: stretch;
+    }
+
+    .gift-page .gift-filter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+        min-height: 48px;
+        padding: 10px 8px;
+        font-size: 12px;
+        line-height: 1.4;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        border-radius: 12px;
+    }
+}
+
     </style>
 </head>
 
