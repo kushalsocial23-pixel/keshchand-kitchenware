@@ -552,8 +552,7 @@
             
             <div id="giftProductsGrid" class="gift-products-grid"></div>
 
-            <script>
-                
+<script>
 const giftProducts = [
     {
         id: "om-diya",
@@ -577,92 +576,76 @@ const giftProducts = [
     }
 ];
 
+const giftGrid = document.getElementById("giftProductsGrid");
+const giftFilters = document.querySelectorAll(".gift-filter");
 
-                const giftGrid =
-                    document.getElementById("giftProductsGrid");
+function renderGiftProducts(category = "all") {
+    const filteredProducts = category === "all"
+        ? giftProducts
+        : giftProducts.filter(product => product.category === category);
 
-                const giftFilters =
-                    document.querySelectorAll(".gift-filter");
+    if (filteredProducts.length === 0) {
+        giftGrid.innerHTML = `
+            <p class="gift-empty-message">
+                Products in this category will be added soon.
+                Please check back later.
+            </p>
+        `;
+        return;
+    }
 
-                function renderGiftProducts(category = "all") {
-                    const filteredProducts =
-                        category === "all"
-                            ? giftProducts
-                            : giftProducts.filter(
-                                product => product.category === category
-                            );
+    giftGrid.innerHTML = filteredProducts.map(product => `
+        <article class="gift-product-card">
+            <a
+                class="gift-product-link"
+                href="product.html?id=${encodeURIComponent(product.id)}"
+            >
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy"
+                >
 
-                    if (filteredProducts.length === 0) {
-                        giftGrid.innerHTML = `
-                            <p class="gift-empty-message">
-                                Products in this category will be added soon.
-                                Please check back later.
-                            </p>
-                        `;
-                        return;
-                    }
+                <div class="gift-product-info">
+                    <p class="gift-product-category">
+                        ${product.categoryLabel}
+                    </p>
 
-                    giftGrid.innerHTML = filteredProducts.map(product => `
-                        <article class="gift-product-card">
-                            <a
-                                class="gift-product-link"
-                                href="product.html?id=${encodeURIComponent(product.id)}"
-                            >
-                                <img
-                                    src="${product.image}"
-                                    alt="${product.name}"
-                                    loading="lazy"
-                                >
+                    <h3>${product.name}</h3>
 
-                                
-<div class="gift-product-actions">
-    <span class="gift-view-product">
-        View Product →
-    </span>
+                    <p class="gift-product-price">
+                        ${product.price === null
+                            ? "Price to be added"
+                            : "₹" + product.price}
+                    </p>
 
-    </div>
+                    <span class="gift-view-product">
+                        View Product →
+                    </span>
+                </div>
+            </a>
+        </article>
+    `).join("");
+}
 
-                                    <p class="gift-product-price">
-                                        ${product.price === null
-                                            ? "Price to be added"
-                                            : "₹" + product.price}
-                                    </p>
+giftFilters.forEach(button => {
+    button.addEventListener("click", () => {
+        giftFilters.forEach(filter => {
+            filter.classList.remove("active");
+            filter.setAttribute("aria-pressed", "false");
+        });
 
-                                    
-<span class="gift-view-product">
-    View Product →
-</span>
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
 
-<button
-    type="button"
-    class="gift-share-button"
-    data-product-id="${product.id}"
-    onclick="event.preventDefault(); event.stopPropagation(); shareGiftProduct('${product.id}')"
->
-    ↗ Share Product
-</button>
+        renderGiftProducts(button.dataset.category);
+    });
+});
 
-                                </div>
-                            </a>
-                        </article>
-                    `).join("");
-                }
+// Display products when the page first loads.
+renderGiftProducts();
+</script>
 
-                giftFilters.forEach(button => {
-                    button.addEventListener("click", () => {
-                        giftFilters.forEach(filter => {
-                            filter.classList.remove("active");
-                            filter.setAttribute("aria-pressed", "false");
-                        });
-
-                        button.classList.add("active");
-                        button.setAttribute("aria-pressed", "true");
-
-                        renderGiftProducts(button.dataset.category);
-                    });
-                });
-
-            </script>
 
 
         </section>
