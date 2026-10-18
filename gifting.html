@@ -459,6 +459,23 @@
     }
 }
 
+.gift-product-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.gift-product-actions .gift-view-product {
+    margin-top: 0;
+}
+
+.gift-product-actions .gift-share-button {
+    margin: 0;
+}
+
 .gift-share-button {
     display: inline-block;
     margin: 8px 0 0 8px;
@@ -618,12 +635,23 @@ const giftProducts = [
                                     loading="lazy"
                                 >
 
-                                <div class="gift-product-info">
-                                    <p class="gift-product-category">
-                                        ${product.categoryLabel}
-                                    </p>
+                                
+<div class="gift-product-actions">
+    <span class="gift-view-product">
+        View Product →
+    </span>
 
-                                    <h3>${product.name}</h3>
+    <button
+        type="button"
+        class="gift-share-button"
+        data-product-id="${product.id}"
+        onclick="event.preventDefault(); event.stopPropagation(); shareGiftProduct('${product.id}')"
+        aria-label="Share ${product.name}"
+        title="Share this product"
+    >
+        ↗ Share
+    </button>
+</div>
 
                                     <p class="gift-product-price">
                                         ${product.price === null
