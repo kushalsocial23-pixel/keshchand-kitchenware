@@ -2509,54 +2509,52 @@ footer p:last-child {
    MOBILE
    ================================= */
 
+/* MOBILE CATEGORY CARDS — SQUARE WITH CONTENT FIT */
 @media (max-width: 768px) {
-
-    .services-section {
-        padding: 60px 6%;
+    #categories > div {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
     }
 
-    .services-container > h2 {
-        font-size: 30px;
-        line-height: 1.25;
-    }
-
-    .services-intro {
-        margin-bottom: 35px;
-
-        font-size: 15px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-    }
-
-    .service-content {
-        padding: 25px;
-    }
-
-    .service-content h3 {
-        font-size: 24px;
-    }
-
-    .service-content > p:not(.service-number) {
-        font-size: 14px;
-    }
-
-    .service-highlights {
-        grid-template-columns: 1fr;
-    }
-
-    .service-button {
-        width: 100%;
-        box-sizing: border-box;
-
+    #categories > div > a.category-card {
+        aspect-ratio: 1 / 1 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 16px 10px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        overflow: hidden !important;
         text-align: center;
     }
 
-}
-/* =================================
+    #categories .category-icon {
+        width: 44px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+        flex-shrink: 0 !important;
+        font-size: 22px !important;
+        margin: 0 auto !important;
+    }
+
+    #categories .category-card h3 {
+        font-size: 17px !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        overflow-wrap: break-word;
+    }
+
+    #categories .category-card p {
+        font-size: 11px !important;
+        line-height: 1.35 !important;
+        margin: 0 !important;
+        overflow-wrap: break-word;
+    }
+}/* =================================
    HOW IT WORKS
    ================================= */
 
