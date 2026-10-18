@@ -598,7 +598,38 @@ function changeGalleryImage(index) {
     thumbnails.forEach((thumbnail, i) => {
         thumbnail.classList.toggle("active", i === currentImageIndex);
     });
+
+const shareButton = document.getElementById("shareProductBtn");
+
+if (shareButton) {
+    shareButton.addEventListener("click", async () => {
+        const productUrl = window.location.href;
+
+        const shareData = {
+            title: `${item.name} | KeshChand Kitchenware`,
+            text: `Check out ${item.name} at KeshChand Kitchenware.`,
+            url: productUrl
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(productUrl);
+                alert("Product link copied! You can now share it.");
+            } else {
+                prompt("Copy this product link to share:", productUrl);
+            }
+        } catch (error) {
+            if (error.name !== "AbortError") {
+                alert("Unable to share right now. Please try again.");
+            }
+        }
+    });
 }
+
+}
+            
 
 function startGallerySlideshow() {
     clearInterval(galleryTimer);
