@@ -187,6 +187,86 @@
     top: auto !important;
 }
 
+/* =========================================
+   PREMIUM GIFTING INTRO BANNER
+   Ivory + Antique Gold
+   ========================================= */
+
+.gift-page .gift-page-heading {
+    position: static !important;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(
+        135deg,
+        #fffdf7 0%,
+        #f8efdd 52%,
+        #fffaf0 100%
+    );
+    border: 1px solid #d5b77b;
+    border-bottom: 2px solid #c6a15c;
+    box-shadow: 0 8px 28px rgba(111, 78, 38, 0.08);
+}
+
+/* Subtle animated golden glow */
+.gift-page .gift-page-heading::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(210, 174, 104, 0.18) 0%,
+        rgba(210, 174, 104, 0.06) 35%,
+        transparent 68%
+    );
+    animation: giftingGoldGlow 8s ease-in-out infinite alternate;
+}
+
+/* Fine antique-gold decorative corners */
+.gift-page .gift-page-heading::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    z-index: -1;
+    pointer-events: none;
+    border: 1px solid rgba(177, 137, 66, 0.24);
+    border-radius: 2px;
+}
+
+/* Refined heading details */
+.gift-page .gift-page-heading .eyebrow {
+    color: #9b773b;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.gift-page .gift-page-heading h1 {
+    color: #432e1a;
+}
+
+.gift-page .gift-page-heading p {
+    color: #6b5845;
+}
+
+/* Gentle glow animation */
+@keyframes giftingGoldGlow {
+    from {
+        transform: translate(-3%, -2%) scale(0.96);
+        opacity: 0.65;
+    }
+    to {
+        transform: translate(3%, 2%) scale(1.06);
+        opacity: 1;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .gift-page .gift-page-heading::before {
+        animation: none;
+    }
+}
+
     </style>
 </head>
 
