@@ -3141,3 +3141,56 @@ footer p:last-child {
         margin: 0;
     }
 }
+
+/* FINAL MOBILE LAYOUT POLISH */
+@media (max-width: 550px) {
+    #categories > div {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    #categories article {
+        min-width: 0;
+        min-height: 180px;
+        aspect-ratio: auto;
+        padding: 18px 12px;
+        overflow-wrap: anywhere;
+    }
+
+    #categories article h3 {
+        font-size: 18px;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+
+    #categories article p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    #categories .category-icon {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 12px;
+        flex-shrink: 0;
+    }
+
+    .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .service-card {
+        min-width: 0;
+    }
+
+    .service-content {
+        padding: 22px 18px;
+    }
+
+    .service-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
