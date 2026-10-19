@@ -3288,3 +3288,41 @@ footer p:last-child {
     }
 }
 
+/* NARROW MOBILE HERO SAFEGUARD */
+@media (max-width: 480px) {
+    section.hero .hero-content {
+        min-width: 0;
+        gap: 28px;
+    }
+
+    section.hero .hero-text {
+        min-width: 0;
+    }
+
+    section.hero .hero-text h1 {
+        font-size: clamp(34px, 9vw, 42px);
+        overflow-wrap: break-word;
+    }
+
+    section.hero .hero-description {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    section.hero .hero-buttons {
+        gap: 10px;
+    }
+
+    section.hero .hero-button {
+        max-width: 100%;
+        margin-right: 0;
+        padding: 13px 17px;
+        box-sizing: border-box;
+    }
+
+    section.hero .hero-image {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
