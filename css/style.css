@@ -1568,26 +1568,31 @@ footer p:last-child {
    MOBILE HEADER
    ================================= */
 
-@media (max-width: 768px) {
 
+/* MOBILE HEADER */
+@media (max-width: 768px) {
     header {
-        padding: 18px 15px;
+        padding: 14px 12px;
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
 
     header .logo {
         justify-content: center;
         text-align: center;
+        gap: 9px;
+        max-width: 100%;
     }
 
     header .logo img {
-        width: 48px;
-        height: 48px;
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
     }
 
     header .logo span {
-        font-size: 22px;
+        font-size: 20px;
+        white-space: normal;
     }
 
     header nav {
@@ -1596,37 +1601,15 @@ footer p:last-child {
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        gap: 8px 14px;
+        gap: 8px 16px;
     }
 
     header nav a {
         font-size: 13px;
-        line-height: 1.4;
+        line-height: 1.5;
         white-space: nowrap;
+        padding: 2px 0;
     }
-}
-/* PREMIUM CATEGORY ICONS */
-
-.category-icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #f1e3cc;
-    border: 1px solid #d9c3a2;
-    border-radius: 50%;
-
-    font-size: 30px;
-    line-height: 1;
-
-    box-shadow: 0 4px 12px rgba(67, 46, 26, 0.08);
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
 }
 
 /* CATEGORY CARD HOVER */
