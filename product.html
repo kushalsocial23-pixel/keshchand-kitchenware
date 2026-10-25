@@ -436,6 +436,32 @@ const products = [
     "image/gifting/bowl-spoon-details.png",
     "image/gifting/bowl-spoon-features.png"
 ],
+        
+        colors: [
+            {
+                name: "Original",
+                label: "Original",
+                image: "image/gifting/bowl-spoon-main.jpg",
+                gallery: [
+                    "image/gifting/bowl-spoon-main.jpg",
+                    "image/gifting/bowl-spoon-lifestyle.png",
+                    "image/gifting/bowl-spoon-details.png",
+                    "image/gifting/bowl-spoon-features.png"
+                ]
+            },
+            {
+                name: "Gold-Silver",
+                label: "Gold-Silver",
+                image: "image/gifting/bowl-spoon-gs-main.png",
+                gallery: [
+                    "image/gifting/bowl-spoon-gs-main.png",
+                    "image/gifting/bowl-spoon-gs-lifestyle.png",
+                    "image/gifting/bowl-spoon-gs-details.png",
+                    "image/gifting/bowl-spoon-gs-features.png"
+                ]
+            }
+        ],
+
         description:
             "A decorative German silver bowl and matching spoon set, presented in a gift box. A thoughtful option for housewarming and special occasions.",
         details: {
@@ -486,6 +512,9 @@ const products = [
                 item.name + " | KeshChand Kitchenware";
 
             const gallery = item.gallery || [item.image];
+
+const hasColors = item.id === "bowl-spoon" && item.colors;
+let selectedColor = hasColors ? item.colors[0] : null;
 
             const specifications = Object.entries(item.details || {})
                 .map(([label, value]) => `
