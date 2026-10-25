@@ -628,7 +628,14 @@ ${hasColors ? `
             `;
 
             
+
 let currentImageIndex = 0;
+let activeGallery = [...gallery];
+
+if (selectedColor) {
+    activeGallery = selectedColor.gallery || [selectedColor.image];
+}
+
 let galleryTimer;
 
 const mainImage = document.getElementById("productMainImage");
@@ -637,10 +644,14 @@ const thumbnails = [
 ];
 
 function changeGalleryImage(index) {
-    currentImageIndex = (index + gallery.length) % gallery.length;
+    
+currentImageIndex = (index + activeGallery.length) % activeGallery.length;
 
-    mainImage.src = gallery[currentImageIndex];
-    mainImage.alt = item.name + " - Image " + (currentImageIndex + 1);
+mainImage.src = activeGallery[currentImageIndex];
+
+   
+mainImage.alt = item.name + (selectedColor ? " - " + selectedColor.label : "") + " - Image " + (currentImageIndex + 1);
+
 
     thumbnails.forEach((thumbnail, i) => {
         thumbnail.classList.toggle("active", i === currentImageIndex);
@@ -688,12 +699,29 @@ function startGallerySlideshow() {
     }
 }
 
-thumbnails.forEach((button, index) => {
-    button.addEventListener("click", () => {
-        changeGalleryImage(index);
-        startGallerySlideshow();
+
+function renderGalleryThumbnails() {
+    const thumbnailContainer = productContent.querySelector(".product-gallery-thumbnails");
+
+    thumbnailContainer.innerHTML = activeGallery.map((image, index) => `
+        <button
+            type="button"
+            class="product-thumbnail ${index === currentImageIndex ? "active" : ""}"
+            aria-label="View product image ${index + 1}"
+        >
+            <img src="${escapeHTML(image)}" alt="">
+        </button>
+    `).join("");
+
+    thumbnailContainer.querySelectorAll(".product-thumbnail").forEach((button, index) => {
+        button.addEventListener("click", () => {
+            changeGalleryImage(index);
+            startGallerySlideshow();
+        });
     });
-});
+}
+
+renderGalleryThumbnails();
 
 document.getElementById("galleryPrev").addEventListener("click", () => {
     changeGalleryImage(currentImageIndex - 1);
