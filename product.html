@@ -723,6 +723,32 @@ function renderGalleryThumbnails() {
 
 renderGalleryThumbnails();
 
+const colorSwatches = productContent.querySelectorAll(".product-color-swatch");
+
+colorSwatches.forEach(button => {
+    button.addEventListener("click", () => {
+        const colorIndex = Number(button.dataset.colorIndex);
+        selectedColor = item.colors[colorIndex];
+        activeGallery = selectedColor.gallery || [selectedColor.image];
+        currentImageIndex = 0;
+
+        colorSwatches.forEach(swatch => {
+            const isActive = swatch === button;
+            swatch.classList.toggle("active", isActive);
+            swatch.setAttribute("aria-pressed", String(isActive));
+        });
+
+        const selectedColorLabel = document.getElementById("selectedColorName");
+        if (selectedColorLabel) {
+            selectedColorLabel.textContent = selectedColor.label;
+        }
+
+        changeGalleryImage(0);
+        renderGalleryThumbnails();
+        startGallerySlideshow();
+    });
+});
+
 document.getElementById("galleryPrev").addEventListener("click", () => {
     changeGalleryImage(currentImageIndex - 1);
     startGallerySlideshow();
