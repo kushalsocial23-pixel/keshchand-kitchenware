@@ -689,15 +689,17 @@ if (shareButton) {
 }
             
 
+
 function startGallerySlideshow() {
     clearInterval(galleryTimer);
 
-    if (gallery.length > 1) {
+    if (activeGallery.length > 1) {
         galleryTimer = setInterval(() => {
             changeGalleryImage(currentImageIndex + 1);
         }, 5000);
     }
 }
+
 
 
 function renderGalleryThumbnails() {
