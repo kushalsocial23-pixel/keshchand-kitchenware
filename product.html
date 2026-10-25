@@ -577,6 +577,24 @@ let selectedColor = hasColors ? item.colors[0] : null;
 
                         <h1>${escapeHTML(item.name)}</h1>
 
+${hasColors ? `
+    <div class="product-color-selector">
+        <p><strong>Finish:</strong> <span id="selectedColorName">${selectedColor.label}</span></p>
+        <div class="product-color-options">
+            ${item.colors.map((color, index) => `
+                <button
+                    type="button"
+                    class="product-color-swatch ${index === 0 ? "active" : ""}"
+                    data-color-index="${index}"
+                    aria-pressed="${index === 0}"
+                >
+                    ${escapeHTML(color.label)}
+                </button>
+            `).join("")}
+        </div>
+    </div>
+` : ""}
+
                         <p class="product-detail-price">
                             ${item.price === null
                                 ? "Price to be added"
